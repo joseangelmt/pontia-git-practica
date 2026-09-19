@@ -7,11 +7,11 @@ jobs:
   saludo:
     runs-on: ubuntu-latest
     steps:
-      -name: "Preguntar mensaje de texto"
+      - name: "Preguntar mensaje de texto"
        run: |
          echo "Hola, escribe a continuación un texto:"
          read texto
-      -name: "Mostrar mensaje de texto"
+      - name: "Mostrar mensaje de texto"
        run: |
          echo "El mensaje ingresado es: $texto"
          
