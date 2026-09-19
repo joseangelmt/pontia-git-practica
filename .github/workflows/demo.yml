@@ -1,17 +1,13 @@
 on:
-  push:
-    branches:
-      - main
+  workflow_dispatch:
+    inputs:
+      mensaje:
+        description: "Escribe un mensaje"
+        required: true
 
 jobs:
   saludo:
     runs-on: ubuntu-latest
     steps:
-      - name: "Preguntar mensaje de texto"
-       run: |
-         echo "Hola, escribe a continuación un texto:"
-         read texto
-      - name: "Mostrar mensaje de texto"
-       run: |
-         echo "El mensaje ingresado es: $texto"
-         
+      - name: Mostrar mensaje
+        run: echo "El mensaje es: ${{ github.event.inputs.mensaje }}"
